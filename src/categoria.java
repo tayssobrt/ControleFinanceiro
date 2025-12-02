@@ -1,80 +1,99 @@
 import java.util.Scanner;
 
 public class categoria {
-    private String Alimentacao;
-    private String Despesas;
-    private String Transporte;
-    private String Entretenimento;
-    private String Outros;
+    private double Alimentacao;
+    private double Despesas;
+    private double Transporte;
+    private double Entretenimento;
+    private double Outros;
 
-    public categoria(String alimentacao, String despesas, String transporte, String entretenimento, String outros) {
-        Alimentacao = alimentacao;
-        Despesas = despesas;
-        Transporte = transporte;
-        Entretenimento = entretenimento;
-        Outros = outros;
+    public categoria(double alimentacao, double despesas, double transporte, double entretenimento, double outros) {
+        this.Alimentacao = 0;
+        this.Despesas = 0;
+        this.Transporte = 0;
+        this.Entretenimento = 0;
+        this.Outros = 0;
     }
 
-    public String getAlimentacao() {
+    public categoria() {
+
+    }
+
+    public double getAlimentacao() {
         return Alimentacao;
     }
 
-    public void setAlimentacao(String alimentacao) {
+    public void setAlimentacao(double alimentacao) {
         Alimentacao = alimentacao;
     }
 
-    public String getDespesas() {
+    public double getDespesas() {
         return Despesas;
     }
 
-    public void setDespesas(String despesas) {
+    public void setDespesas(double despesas) {
         Despesas = despesas;
     }
 
-    public String getTransporte() {
+    public double getTransporte() {
         return Transporte;
     }
 
-    public void setTransporte(String transporte) {
+    public void setTransporte(double transporte) {
         Transporte = transporte;
     }
 
-    public String getEntretenimento() {
+    public double getEntretenimento() {
         return Entretenimento;
     }
 
-    public void setEntretenimento(String entretenimento) {
+    public void setEntretenimento(double entretenimento) {
         Entretenimento = entretenimento;
     }
 
-    public String getOutros() {
+    public double getOutros() {
         return Outros;
     }
 
-    public void setOutros(String outros) {
+    public void setOutros(double outros) {
         Outros = outros;
     }
 
-    public int adicionarGastos(Scanner sc, double valor) {
+    public void adicionarGastos(Scanner sc, double valor) {
         String categoria = sc.nextLine();
         switch (categoria) {
             case "1":
                 setAlimentacao(valor + getAlimentacao());
-                return 1;
+                System.out.printf("O valor %.2f foi adicionado a categoria Alimentação", valor);
+                System.out.println("");
+                System.out.printf("O gasto foi atualizado para %.2f", getAlimentacao());
+                break;
             case "2":
                 setDespesas(valor + getDespesas());
-                return 2;
+                System.out.printf("O valor %.2f foi adicionado a categoria Despesas", valor);
+                System.out.println("");
+                System.out.printf("O gasto foi atualizado para %.2f", getDespesas());
+                break;
             case "3":
                 setTransporte(valor + getTransporte());
-                return 3;
+                System.out.printf("O valor %.2f foi adicionado a categoria Transporte", valor);
+                System.out.println("");
+                System.out.printf("O gasto foi atualizado para %.2f", getTransporte());
+                break;
             case "4":
-                setTransporte(valor + getTransporte());
-                return 4;
+                setEntretenimento(valor + getEntretenimento());
+                System.out.println("");
+                System.out.printf("O valor %.2f foi adicionado a categoria Entreterimento", valor);
+                System.out.printf("O gasto foi atualizado para %.2f", getEntretenimento());
+                break;
             case "5":
                 setOutros(valor + getOutros());
-                return 5;
+                System.out.printf("O valor %.2f foi adicionado a categoria Outros", valor);
+                System.out.println("");
+                System.out.printf("O gasto foi atualizado para %.2f", getOutros());
+                break;
             default:
-                return 0;
+
         }
 
     }

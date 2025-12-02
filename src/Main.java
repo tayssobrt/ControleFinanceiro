@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Locale.setDefault(Locale.US);
         Gastos G = new Gastos();
-        categoria C = new categoria("Alimentação", "Despesas", "Transporte", "Entretenimento", "Outros");
+        categoria C = new categoria();
 
         System.out.println("Controle de Gastos");
         System.out.println("Adicionar gastos :1: ");
