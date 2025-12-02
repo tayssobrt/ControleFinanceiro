@@ -1,15 +1,32 @@
-//TIP Para <b>executar</b> o código, pressione <shortcut actionId="Run"/> ou
-// clique no ícone <icon src="AllIcons.Actions.Execute"/> no gutter.
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Pressione <shortcut actionId="ShowIntentionActions"/> com seu caret no texto destacado
-        // para ver como IntelliJ IDEA sugere corrigi-lo.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
+        Gastos G = new Gastos();
+        categoria C = new categoria("Alimentação", "Despesas", "Transporte", "Entretenimento", "Outros");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Pressione <shortcut actionId="Debug"/> para iniciar a depuração do seu código. Definimos um ponto de interrupção <icon src="AllIcons.Debugger.Db_set_breakpoint"/>
-            // para você, mas você sempre pode adicionar mais pressionando <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("Controle de Gastos");
+        System.out.println("Adicionar gastos :1: ");
+        System.out.println("Ver metricas :2: ");
+        System.out.print("Selecione: ");
+        String op = sc.nextLine();
+        if (op.equals("1")) {
+            System.out.print("Digite o valor do gasto: ");
+            double valor = sc.nextDouble();
+            sc.nextLine();
+            System.out.print("Digite a categoria do gasto: ");
+            System.out.print("Alimentação (1)");
+            System.out.println("Despesas (2)");
+            System.out.println("Transporte (3)");
+            System.out.println("Entretenimento (4)");
+            System.out.println("Outros (5)");
+            C.adicionarGastos(sc, valor);
+        } else if (op.equals("2")) {
         }
+
+
     }
 }
